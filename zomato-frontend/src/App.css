@@ -1,0 +1,145 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    background: linear-gradient(135deg, rgba(244, 244, 244, 0.9), rgba(224, 224, 224, 0.9)), 
+    url('/public/photo-14.avif'); /* Gradient + Image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for Login, Register, and Home */
+  .container {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 350px; /* Slightly wider for modern look */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Input Fields */
+  input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* More rounded corners */
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Glow effect */
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Buttons */
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px; /* More rounded corners */
+    font-size: 16px;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Shadow on hover */
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #282c34, #1a1d23); /* Gradient background */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  nav h2 {
+    margin: 0;
+    font-size: 24px; /* Larger font size */
+    font-weight: 600; /* Semi-bold */
+  }
+  
+  nav a {
+    color: white;
+    margin-right: 20px; /* Slightly more spacing */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #61dafb;
+  }
+  
+  nav button {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000); /* Gradient background */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  nav button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3); /* Shadow on hover */
+  }
+  
+  nav button:active {
+    transform: translateY(0); /* Reset on click */
+  }
+  
+  /* Home Page */
+  .welcome-text {
+    font-size: clamp(20px, 5vw, 28px); /* Responsive font size */
+    font-weight: 700; /* Bold */
+    margin-bottom: 20px;
+    color: #282c34; /* Darker text for contrast */
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
