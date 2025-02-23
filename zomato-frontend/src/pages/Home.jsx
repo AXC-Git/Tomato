@@ -26,12 +26,12 @@ const Home = () => {
   };
 
   if (isLoading) {
-    return <div className="home-container">Loading...</div>;
+    return <div className="container">Loading...</div>;
   }
 
   return (
-    <div className="home-container">
-      <h2 className="home-welcome-text">Welcome, {username}!</h2>
+    <div className="container">
+      <h2 className="welcome-text">Welcome, {username}!</h2>
       <button
         onClick={handleLogout}
         style={{
