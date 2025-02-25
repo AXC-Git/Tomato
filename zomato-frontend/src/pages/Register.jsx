@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../App.css"; // Import CSS
 
 // The API base URL dynamically
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+//const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 const Register = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -34,7 +34,7 @@ const Register = ({ setIsLoggedIn }) => {
 
     setLoading(true); // Set loading to true during API call
     try {
-        await axios.post(`${API_BASE_URL}/register`, { username, email, password });
+        await axios.post("http://localhost:5000/register", { username, email, password });
         localStorage.setItem("username", username);
         setIsLoggedIn(true);
         navigate("/home");
@@ -49,24 +49,9 @@ const Register = ({ setIsLoggedIn }) => {
   return (
     <div className="container">
       <h2>Register</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleRegister} disabled={loading}>
         {loading ? "Registering..." : "Register"}
       </button>

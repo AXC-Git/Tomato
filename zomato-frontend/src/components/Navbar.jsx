@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ isLoggedIn, onLogout }) => {
   const navigate = useNavigate();
-  const [hoveredLinkId, setHoveredLinkId] = useState(null);
-  const [isLogoutHovered, setIsLogoutHovered] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("username");
@@ -29,57 +26,18 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
       justifyContent: "space-between",
       alignItems: "center"
     }}>
-      <h2 style={{ margin: 0 }}>Tomato App</h2>
+      <h2>Tomato App</h2>
       <div>
         {!isLoggedIn ? (
           <>
-            <NavLink
-              to="/login"
-              style={({ isActive }) => getLinkStyle(isActive, 'login')}
-              onMouseEnter={() => setHoveredLinkId('login')}
-              onMouseLeave={() => setHoveredLinkId(null)}
-              aria-label="Login"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              style={({ isActive }) => getLinkStyle(isActive, 'register')}
-              onMouseEnter={() => setHoveredLinkId('register')}
-              onMouseLeave={() => setHoveredLinkId(null)}
-              aria-label="Register"
-            >
-              Register
-            </NavLink>
+            <Link to="/login" style={{ marginRight: "10px", color: "white" }}>Login</Link>
+            <Link to="/register" style={{ color: "white" }}>Register</Link>
           </>
         ) : (
           <>
-            <NavLink
-              to="/home"
-              style={({ isActive }) => getLinkStyle(isActive, 'home')}
-              onMouseEnter={() => setHoveredLinkId('home')}
-              onMouseLeave={() => setHoveredLinkId(null)}
-              aria-label="Home"
-            >
-              Home
-            </NavLink>
-            <button
-              onClick={handleLogout}
-              onMouseEnter={() => setIsLogoutHovered(true)}
-              onMouseLeave={() => setIsLogoutHovered(false)}
-              style={{
-                backgroundColor: isLogoutHovered ? "#990000" : "#cc0000",
-                color: "white",
-                border: "none",
-                padding: "8px 15px",
-                cursor: "pointer",
-                borderRadius: "4px",
-                transition: "background-color 0.2s ease",
-              }}
-              aria-label="Logout"
-            >
-              Logout
-            </button>
+            <Link to="/home" style={{ marginRight: "10px", color: "white" }}>Home</Link>
+            <button onClick={handleLogout} style={{ backgroundColor: "red", color: "white", border: "none", padding: "5px 10px", cursor: "pointer" }}>
+              Logout</button>
           </>
         )}
       </div>

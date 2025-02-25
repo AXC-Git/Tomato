@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css"; // Import CSS
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+//const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ const Login = ({ setIsLoggedIn }) => {
 
     setLoading(true); // Set loading to true during API call
     try {
-      const res = await axios.post(`${API_BASE_URL}/login`, { email, password });
+      const res = await axios.post("http://localhost:5000/login", { email, password });
       localStorage.setItem("username", res.data.username);
       setIsLoggedIn(true);
       navigate("/home");
@@ -40,20 +40,10 @@ const Login = ({ setIsLoggedIn }) => {
   return (
     <div className="container">
       <h2>Login</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin} disabled={loading}>
-        {loading ? "Logging in..." : "Login"}
+      {loading ? "Logging in..." : "Login"}
       </button>
     </div>
   );

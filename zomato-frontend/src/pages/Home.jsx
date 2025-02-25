@@ -32,22 +32,7 @@ const Home = () => {
   return (
     <div className="container">
       <h2 className="welcome-text">Welcome, {username}!</h2>
-      <button
-        onClick={handleLogout}
-        style={{
-          background: "linear-gradient(135deg, #ff4d4d, #cc0000)",
-          color: "white",
-          border: "none",
-          padding: "10px 20px",
-          borderRadius: "8px",
-          cursor: "pointer",
-          transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        }}
-        onMouseEnter={(e) => (e.target.style.transform = "translateY(-2px)")}
-        onMouseLeave={(e) => (e.target.style.transform = "translateY(0)")}
-      >
-        Logout
-      </button>
+      <button onClick={() => { localStorage.removeItem("username"); navigate("/login"); }}>Logout</button>
     </div>
   );
 };

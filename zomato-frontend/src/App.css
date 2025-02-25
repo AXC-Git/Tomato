@@ -25,10 +25,10 @@ body::after {
 
 /* Container */
 .container {
-  background: rgba(204, 83, 83, 0.9); /* Add transparency */
+  background: rgba(204, 83, 83, 0.6); /* Add transparency */
   padding: 2rem;
   width: 90%;
-  max-width: 350px;
+  max-width: 300px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative; /* For z-index */
@@ -40,12 +40,12 @@ body::after {
 /* Input Fields */
 input {
   width: 100%; /* Full width for consistency */
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Better contrast */
+  padding: 0.7rem;
+  margin: 0.4rem 0;
+  border: 1px solid rgba(230, 225, 225, 0.3); /* Better contrast */
   border-radius: 8px; /* Slightly smaller radius */
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  background: rgba(27, 27, 27, 0.6); /* Semi-transparent white */
   transition: all 0.2s ease;
 }
 
@@ -64,17 +64,42 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
 }
 
+
+button:hover {
+  background-color: #0056b3;
+}
+
 /* Navbar */
 nav {
   position: fixed;
   top: 0;
-  width: 100%;
-  background: linear-gradient(135deg, rgba(40, 44, 52, 0.95), rgba(26, 29, 35, 0.95)); /* Add transparency */
-  backdrop-filter: blur(5px); /* Glass effect */
+  width: 200%;
+  background-color: #2761d6;
   color: white;
-  padding: 0.75rem 1.5rem; /* Relative units */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 2; /* Even higher for navbar */
 }
+
+
+nav h2 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav button {
+  background-color: red;
+  padding: 5px 10px;
+}
+
 
 /* Home Page */
 .welcome-text {
