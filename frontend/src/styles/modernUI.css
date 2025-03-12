@@ -1,0 +1,111 @@
+
+/* Modern UI styles for frontend */
+
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ffd166;
+  --text-color: #2d334a;
+  --background-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Modern Card Component */
+.modern-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Modern Buttons */
+.btn-modern {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #3dbeb5;
+  transform: translateY(-2px);
+}
+
+/* Form elements */
+.modern-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.modern-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+  outline: none;
+}
+
+/* Food item card */
+.food-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.food-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.food-card:hover .food-img {
+  transform: scale(1.05);
+}
+
+.food-info {
+  padding: 15px;
+}
+
+.food-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.food-price {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 18px;
+}
